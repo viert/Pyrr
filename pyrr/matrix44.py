@@ -60,8 +60,8 @@ def create_from_eulers( eulers ):
     mat = create_identity()
     
     # we'll use Matrix33 for our conversion
-    mat33 = mat[ 0:3, 0:3 ]
-    mat[ 0:3, 0:3 ] = matrix33.create_from_eulers( eulers, mat33 )
+    mat33 = matrix33.create_from_eulers( eulers )
+    mat[ 0:3, 0:3 ] = mat33
     return mat
 
 def create_from_quaternion( quat ):
